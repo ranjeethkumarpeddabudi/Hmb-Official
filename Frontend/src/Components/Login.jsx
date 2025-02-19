@@ -79,7 +79,7 @@ const Login = () => {
         </label>
         <div className="flex items-center space-x-2">
           <input
-            type={show ? "password" : "text"}
+            type={!show ? "password" : "text"}
             placeholder="Enter Your Password"
             id="password"
             name="password"
@@ -88,7 +88,7 @@ const Login = () => {
             className="border-slate-400 border-2 w-[300px] outline-none rounded-md px-2 py-1 mt-2"
           />
           <button onClick={() => setShow(!show)} type="button">
-            {!show ? <IoEye size={30} /> : <IoEyeOff size={30} />}
+            {show ? <IoEye size={30} /> : <IoEyeOff size={30} />}
           </button>
         </div>
 
