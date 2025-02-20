@@ -91,7 +91,7 @@ const SignUp = () => {
   return (
     <div className="flex h-full items-center justify-center py-2 m-auto ">
       <form
-        className="flex flex-col px-10 md:px-36 py-20 shadow-2xl bg-[url('bg.jpg')]"
+        className="flex flex-col px-10 md:px-36 py-20 shadow-2xl bg-[url('/bg.jpg')]"
         onSubmit={handleSubmit}
       >
         <img src="hmb-logo.png" alt="" className="h-14 w-14 mx-auto" />
