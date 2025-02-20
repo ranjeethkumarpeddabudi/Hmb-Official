@@ -63,14 +63,11 @@ const SignUp = () => {
       body: JSON.stringify(user),
     };
     try {
-<<<<<<< HEAD
       const res = await fetch(
         "https://hmb-official.onrender.com/api/sign-up",
         options
       );
-=======
-      const res = await fetch("https://hmb-official.onrender.com/api/sign-up", options);
->>>>>>> 3e4cd30fd853e3616034cf4584ba96fb51e2299b
+
       if (res.ok == true) {
         setUser({
           firstName: "",
