@@ -25,8 +25,9 @@ const Login = () => {
     });
   };
   const loginUser = async () => {
+    toast.loading("Logging In");
     try {
-      const res = await fetch("http://localhost:5003/api/login", {
+      const res = await fetch("https://hmb-official.onrender.com/api/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -41,6 +42,7 @@ const Login = () => {
         });
         Cookies.set("jwt", data.jwt, { expires: 1 });
         navigate("/", { replace: true });
+        toast.dismiss();
         toast.success("Login Successful");
       } else {
         toast.error("Invalid Credentials");
@@ -79,7 +81,7 @@ const Login = () => {
         </label>
         <div className="flex items-center space-x-2">
           <input
-            type={show ? "password" : "text"}
+            type={!show ? "password" : "text"}
             placeholder="Enter Your Password"
             id="password"
             name="password"
@@ -88,7 +90,7 @@ const Login = () => {
             className="border-slate-400 border-2 w-[300px] outline-none rounded-md px-2 py-1 mt-2"
           />
           <button onClick={() => setShow(!show)} type="button">
-            {!show ? <IoEye size={30} /> : <IoEyeOff size={30} />}
+            {show ? <IoEye size={30} /> : <IoEyeOff size={30} />}
           </button>
         </div>
 
